@@ -3,7 +3,7 @@
 ![]()
 
 ## Overview
-This application that allows users to create and update exercises! 
+This application allows users to create and update exercises! 
 
 Here is a link to the deployed webpage: []
 
