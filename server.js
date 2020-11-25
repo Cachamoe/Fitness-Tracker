@@ -17,26 +17,41 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
 
-
-app.get("/workouts", (req, res) => {
-    db.Workout.find({})
-        .then(dbWorkout => {
-            res.json(dbWorkout);
-        })
-        .catch(err => {
-            res.json(err);
-        });
+app.get("/find/:id", (req, res) => {
+    db.Workout.findOne(
+        {
+            _id: mongojs.ObjectId(req.params.id)
+        },
+        (error, data) => {
+            if (error) {
+                res.send(error);
+            } else {
+                res.send(data);
+            }
+        }
+    );
 });
 
-app.post("/submit", ({ body }, res) => {
-    db.Workout.create(body)
-        .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { workout: _id } }, { new: true }))
-        .then(dbWorkout => {
-            res.json(dbWorkout);
-        })
-        .catch(err => {
-            res.json(err);
-        });
+app.put("/update/:id", (req, res) => {
+    db.Workout.update(
+        {
+            _id: mongojs.ObjectId(req.params.id)
+        },
+        {
+            $set: {
+                day: req.body.title,
+                exercise: req.body.note,
+                modified: Date.now()
+            }
+        },
+        (error, data) => {
+            if (error) {
+                res.send(error);
+            } else {
+                res.send(data);
+            }
+        }
+    );
 });
 
 app.listen(PORT, () => {
