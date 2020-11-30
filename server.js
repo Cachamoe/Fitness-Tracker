@@ -14,45 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
+app.use(require("./routes/api-routes"));
+app.use(require("./routes/html-routes"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
 
-app.get("/find/:id", (req, res) => {
-    db.Workout.findOne(
-        {
-            _id: mongojs.ObjectId(req.params.id)
-        },
-        (error, data) => {
-            if (error) {
-                res.send(error);
-            } else {
-                res.send(data);
-            }
-        }
-    );
-});
 
-app.put("/update/:id", (req, res) => {
-    db.Workout.update(
-        {
-            _id: mongojs.ObjectId(req.params.id)
-        },
-        {
-            $set: {
-                day: req.body.title,
-                exercise: req.body.note,
-                modified: Date.now()
-            }
-        },
-        (error, data) => {
-            if (error) {
-                res.send(error);
-            } else {
-                res.send(data);
-            }
-        }
-    );
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
