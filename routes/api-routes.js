@@ -7,7 +7,6 @@ router.get("/api/workouts/range", (req,res) => {
     });
 });
 
-
 router.get("/api/workouts", (req, res) => {
     db.Workout.find().then(results => {
         res.json(results);
@@ -33,6 +32,5 @@ router.put("/api/workouts/:id", (req, res) => {
             res.json(results);
         });
 });
-
 
 module.exports = router;
