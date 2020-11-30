@@ -8,7 +8,7 @@ This application allows users to create and update workouts!
 Here is a link to the deployed webpage: [https://rocky-hollows-56823.herokuapp.com/]
 
 ## Application Features
-1) Allows users to continue and add to a workout instance
+1) Allows users to continue to add to a workout instance
 2) Allows users to create a new workout instance
 3) Provides a dashboard with graphs and a chart to display data
 
