@@ -3,14 +3,14 @@
 ![](https://github.com/Cachamoe/Workout-Tracker/blob/main/public/Screen%20Shot%202020-11-29%20at%207.07.14%20PM.png)
 
 ## Overview
-This application allows users to create and update exercises! 
+This application allows users to create and update workouts! 
 
 Here is a link to the deployed webpage: [https://rocky-hollows-56823.herokuapp.com/]
 
 ## Application Features
-1)
-2)
-3) 
+1) Allows users to continue and add to a workout instance
+2) Allows users to create a new workout instance
+3) Provides a dashboard with graph to display data
 
 
 ## Programs
