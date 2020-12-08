@@ -1,4 +1,4 @@
-# Fitness-Tracker
+# Fitness Tracker
 
 ![](https://github.com/Cachamoe/Workout-Tracker/blob/main/public/Screen%20Shot%202020-11-29%20at%207.07.14%20PM.png)
 
