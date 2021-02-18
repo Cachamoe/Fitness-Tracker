@@ -13,7 +13,7 @@ Here is a link to the deployed webpage: [https://rocky-hollows-56823.herokuapp.c
 3) Provides a dashboard with graphs and a chart to display data
 
 
-## Programs
+## Technologies
 HTML, CSS, Javascript, Node.js, Express.js, MongoDB, Mongoose, Bootstrap, JSON
 
 ## License 
